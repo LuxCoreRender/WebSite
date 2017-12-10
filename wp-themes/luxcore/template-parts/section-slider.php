@@ -34,7 +34,7 @@
 						</div>
 
 						<div class="ht-slide-cap-desc">
-							<?php echo esc_html(get_the_content()); ?>
+							<?php echo esc_html(get_the_excerpt()); ?>
 						</div>
 					</div>
 				</div>
