@@ -45,11 +45,11 @@ if(get_theme_mod('total_featured_section_disable') != 'on' ){ ?>
 						<h5><?php the_title(); ?></h5>
 						<div class="ht-featured-excerpt">
 						<?php 
-						if(has_excerpt()){
+						/*if(has_excerpt()){
 							echo get_the_excerpt();
-						}else{
+						}else{*/
 							echo total_excerpt( get_the_content(), 130); 
-						}?>
+						/*}*/?>
 						</div>
 						<div class="ht-featured-link">
 							<a href="<?php echo esc_url(get_permalink()); ?>"><?php _e( 'Read More', 'total' ); ?></a>
