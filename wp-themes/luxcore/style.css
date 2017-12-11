@@ -1379,7 +1379,7 @@ object {
 	text-decoration: none;
 	color: #444;
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 18px;
 	font-family: 'Oswald', sans-serif;
 	line-height: 36px;
 	padding: 0 15px;
@@ -1429,7 +1429,7 @@ object {
 	color: #444;
 	line-height: 1.5;
 	padding: 10px 15px;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .ht-main-navigation ul ul li {
