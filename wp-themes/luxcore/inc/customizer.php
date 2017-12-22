@@ -144,7 +144,7 @@ function total_customize_register( $wp_customize ) {
 	);
 
 	//SLIDERS
-	for ( $i=1; $i < 4; $i++ ){
+	for ( $i=1; $i < 7; $i++ ){
 
 		$wp_customize->add_setting(
 			'total_slider_heading'.$i,
@@ -480,7 +480,7 @@ function total_customize_register( $wp_customize ) {
 	);
 
 	//FEATURED PAGES
-	for( $i = 1; $i < 4; $i++ ){
+	for( $i = 1; $i < 7; $i++ ){
 		$wp_customize->add_setting(
 			'total_featured_header'.$i,
 			array(

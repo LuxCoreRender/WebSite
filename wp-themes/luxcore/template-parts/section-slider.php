@@ -8,7 +8,7 @@
 <div id="ht-home-slider-section">
 	<div id="ht-bx-slider" class="owl-carousel">
 	<?php 
-	for ($i=1; $i < 4; $i++) {  
+	for ($i=1; $i < 7; $i++) {  
 		$total_slider_page_id = get_theme_mod( 'total_slider_page'.$i );
 
 		if($total_slider_page_id){

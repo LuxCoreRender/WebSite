@@ -24,11 +24,15 @@ if(get_theme_mod('total_featured_section_disable') != 'on' ){ ?>
 			<div class="ht-section-tagline"><?php echo esc_html($total_featured_sub_title); ?></div>
 			<?php } ?>
 			</div>
-		<?php } ?>
+		<?php
+		}
 
-		<div class="ht-featured-post-wrap ht-clearfix">
-			<?php 
-			for( $i = 1; $i < 4; $i++ ){
+		for( $j = 0; $j < 2; $j++ ) {
+			?>
+			<div class="ht-featured-post-wrap ht-clearfix">
+			<?php
+
+			for( $i = 1 + $j * 3; $i < 4  + $j * 3; $i++ ){
 				$total_featured_page_id = get_theme_mod('total_featured_page'.$i); 
 				$total_featured_page_icon = get_theme_mod('total_featured_page_icon'.$i);
 			
@@ -42,13 +46,20 @@ if(get_theme_mod('total_featured_section_disable') != 'on' ){ ?>
 				?>
 					<div class="ht-featured-post">
 						<div class="ht-featured-icon"><i class="<?php echo esc_attr($total_featured_page_icon); ?>"></i></div>
+						<div class="ht-featured-excerpt-image">
+							<?php 
+							if(has_post_thumbnail()){
+								$total_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');	
+								echo '<img alt="'. esc_html(get_the_title()) .'" src="'.esc_url($total_featured_image[0]).'">';
+							} ?>
+						</div>
 						<h5><?php the_title(); ?></h5>
 						<div class="ht-featured-excerpt">
 						<?php 
 						/*if(has_excerpt()){
 							echo get_the_excerpt();
 						}else{*/
-							echo total_excerpt( get_the_content(), 130); 
+							echo total_excerpt(get_the_content(), 130); 
 						/*}*/?>
 						</div>
 						<div class="ht-featured-link">
@@ -62,7 +73,10 @@ if(get_theme_mod('total_featured_section_disable') != 'on' ){ ?>
 				}
 			}
 			?>
-		</div>
+			</div>
+		<?php
+		}
+		?>
 	</div>
 </section>
 <?php }
