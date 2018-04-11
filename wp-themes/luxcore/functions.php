@@ -111,6 +111,15 @@ function total_add_excerpt_support_for_pages() {
 add_action( 'init', 'total_add_excerpt_support_for_pages' );
 
 /**
+ * Get the first sentence of the string (used as an alternative to get_the_excerpt())
+ */
+function get_first_sentence( $string ) {
+	$sentence = preg_split( '/(\.|!|\?)\s/', $string, 2, PREG_SPLIT_DELIM_CAPTURE );
+	// $sentence['1'] is the punctuation mark
+	return $sentence['0'] . $sentence['1'];
+}
+
+/**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
