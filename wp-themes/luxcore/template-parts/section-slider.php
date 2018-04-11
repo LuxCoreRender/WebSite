@@ -19,25 +19,26 @@
 			if( $query->have_posts() ):
 				while($query->have_posts()) : $query->the_post();
 				?>
-				<div class="ht-slide">
-					<div class="ht-slide-overlay"></div>
+				<a class="ht-slide-link" href="<?php the_permalink(); ?>">
+					<span class="ht-slide">
 
-					<?php 
-					if(has_post_thumbnail()){
-						$total_slider_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');	
-						echo '<img alt="'. esc_html(get_the_title()) .'" src="'.esc_url($total_slider_image[0]).'">';
-					} ?>
-				
-					<div class="ht-slide-caption">
-						<div class="ht-slide-cap-title">
-							<span><?php echo esc_html(get_the_title()); ?></span>
-						</div>
+						<?php 
+						if(has_post_thumbnail()){
+							$total_slider_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');	
+							echo '<img alt="'. esc_html(get_the_title()) .'" src="'.esc_url($total_slider_image[0]).'">';
+						} ?>
+					
+						<span class="ht-slide-caption">
+							<span class="ht-slide-cap-title">
+								<span><?php echo esc_html(get_the_title()); ?></span>
+							</span>
 
-						<div class="ht-slide-cap-desc">
-							<?php echo esc_html(get_the_excerpt()); ?>
-						</div>
-					</div>
-				</div>
+							<span class="ht-slide-cap-desc">
+								<?php echo esc_html(get_the_excerpt()); ?>
+							</span>
+						</span>
+					</span>
+				</a>
 				<?php
 				endwhile;
 			endif;
