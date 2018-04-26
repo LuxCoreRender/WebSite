@@ -81,11 +81,6 @@ function total_setup() {
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
 
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	add_editor_style( array( 'css/editor-style.css', total_fonts_url() ) );
 }
 endif; // total_setup
 add_action( 'after_setup_theme', 'total_setup' );
@@ -197,62 +192,6 @@ function total_widgets_init() {
 }
 add_action( 'widgets_init', 'total_widgets_init' );
 
-if ( ! function_exists( 'total_fonts_url' ) ) :
-/**
- * Register Google fonts for Total.
- *
- * @since Total 1.0
- *
- * @return string Google fonts URL for the theme.
- */
-function total_fonts_url() {
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,latin-ext';
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Open Sans, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Pontano Sans font: on or off', 'total' ) ) {
-		$fonts[] = 'Pontano+Sans';
-	}
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Inconsolata, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Oswald font: on or off', 'total' ) ) {
-		$fonts[] = 'Oswald:400,700,300';
-	}
-
-	/*
-	 * Translators: To add an additional character subset specific to your language,
-	 * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-	 */
-	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'total' );
-
-	if ( 'cyrillic' == $subset ) {
-		$subsets .= ',cyrillic,cyrillic-ext';
-	} elseif ( 'greek' == $subset ) {
-		$subsets .= ',greek,greek-ext';
-	} elseif ( 'devanagari' == $subset ) {
-		$subsets .= ',devanagari';
-	} elseif ( 'vietnamese' == $subset ) {
-		$subsets .= ',vietnamese';
-	}
-
-	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' =>  implode( '|', $fonts ) ,
-			'subset' =>  $subsets ,
-		), '//fonts.googleapis.com/css' );
-	}
-
-	return $fonts_url;
-}
-endif;
-
 /**
  * Enqueue scripts and styles.
  */
@@ -271,9 +210,9 @@ function total_scripts() {
 	wp_localize_script( 'total-custom', 'total_localize', array('template_path' => get_template_directory_uri() )); 
 	
 	wp_enqueue_style( 'total-style', get_stylesheet_uri(), array( 'animate', 'font-awesome', 'owl-carousel', 'nivo-lightbox', 'superfish'), '1.0' );
-	wp_enqueue_style( 'total-fonts', total_fonts_url(), array(), null );
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '1.0' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), '4.4.0' );
+	wp_enqueue_style( 'fonts', get_template_directory_uri() . '/css/fonts.css', array(), '1.0' );
 	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), '1.3.3' );
 	wp_enqueue_style( 'nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css', array(), '1.3.3' );
 	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', array(), '1.3.3' );
