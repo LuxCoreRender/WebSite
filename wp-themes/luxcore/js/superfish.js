@@ -159,7 +159,7 @@
 					$ul = $this.children(o.popUpSelector);
 
 				o.onBeforeShow.call($ul);
-				$ul.stop(true, true).animate(o.animation, o.speed, function () {
+				$ul.stop(true, true).show(0, function () {
 					o.onShow.call($ul);
 				});
 				return this;

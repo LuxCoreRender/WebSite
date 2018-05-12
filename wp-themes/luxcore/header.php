@@ -21,17 +21,7 @@
 	<header id="ht-masthead" class="ht-site-header">
 		<div class="ht-container ht-clearfix">
 			<div id="ht-site-branding">
-				<?php 
-				if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) :
-					the_custom_logo();
-				else : 
-					if ( is_front_page() ) : ?>
-						<h1 class="ht-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="ht-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif; ?>
-					<p class="ht-site-description"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'description' ); ?></a></p>
-				<?php endif; ?>
+				<p class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo file_get_contents( get_bloginfo('template_url') . "/images/luxcore-logo.svg" ); ?></a></p>
 			</div><!-- .site-branding -->
 
 			<nav id="ht-site-navigation" class="ht-main-navigation">

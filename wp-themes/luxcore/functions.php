@@ -86,6 +86,24 @@ endif; // total_setup
 add_action( 'after_setup_theme', 'total_setup' );
 
 /**
+ * Make the title a CSS class.
+ *
+ * @wp-hook nav_menu_css_class
+ * @param   array $classes
+ * @param   object $item
+ * @return  array
+ */
+function wpse_65375_class_by_title( $classes, $item )
+{
+    $new_class = mb_strtolower( $item->title );
+    $new_class = str_replace( ' ', '-', $new_class );
+    $new_class = sanitize_html_class( $new_class );
+    $classes[] = $new_class;
+    return $classes;
+}
+add_filter( 'nav_menu_css_class', 'wpse_65375_class_by_title', 10, 2 );
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -216,7 +234,7 @@ function total_scripts() {
 	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), '1.3.3' );
 	wp_enqueue_style( 'nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css', array(), '1.3.3' );
 	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', array(), '1.3.3' );
-	wp_add_inline_style( 'total-style', total_dymanic_styles() );
+	//~ wp_add_inline_style( 'total-style', total_dymanic_styles() );
 	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
