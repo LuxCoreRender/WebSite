@@ -51,7 +51,9 @@
 		<div id="ht-bottom-footer">
 			<div class="ht-container">
 				<div class="ht-site-info">
-					Site design Copyright © 2018 LuxCoreRender project, images used are copyrighted by their respective authors and used with kind permission. Contact <a href="mailto:admin@luxcorerender.org">admin@luxcorerender.org</a>
+					<div>Site design Copyright © 2018 LuxCoreRender project</div>
+					<div>Images used are copyrighted by their respective authors and used with kind permission.</div>
+					<div>Contact <a href="mailto:admin@luxcorerender.org">admin@luxcorerender.org</a></div>
 				</div><!-- #site-info -->
 			</div>
 		</div>

@@ -2577,19 +2577,13 @@ section#ht-featured-post-section{
 --------------------------------------------------------------*/
 #ht-colophon{
 	margin-top: 40px;
-	background: url(images/footer-bg.jpg);
-	border-top: 4px solid #fe890a;
-	font-size: 20px;
+	background: url(images/logo-footer.svg) no-repeat 90% -20% #333;
+	font-size: 24px;
 }
 
 .page-template-home-template #ht-colophon,
 .home.blog #ht-colophon{
 	margin-top: 0
-}
-
-#ht-colophon a{
-	color: #BBB;
-	text-decoration: none;
 }
 
 #ht-colophon .widget-title{
@@ -2633,22 +2627,38 @@ section#ht-featured-post-section{
 }
 
 #ht-bottom-footer{
-	background: rgba(0,0,0,0.3);
-	padding: 30px 0;
-	color: #AAA;
-	line-height: 1.2;
-	text-align: center;
+	padding: 50px 0;
+	color: #eee;
+	line-height: 1.5;
 }
 
-.ht-site-info a{
-	border-bottom: 1px dotted #AAA;
+.ht-site-info a {
+	position: relative;
+}
+
+.ht-site-info a::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-bottom: 1px solid currentColor;
+	transform: translateY( -0.1em );
+	opacity: 1;
+	transition: transform 0.1s, opacity 0.1s;
+}
+
+.ht-site-info a:hover::before {
+	transform: translateY( 0.1em );
+	opacity: 0;
 }
 
 #ht-back-top{
 	position: fixed;
 	right: 10px;
 	bottom: 10px;
-	background: #111;
+	background: rgba( 0, 0, 0, 0.5 );
 	height: 60px;
 	width: 40px;
 	text-align: center;
@@ -2667,6 +2677,10 @@ section#ht-featured-post-section{
 
 #ht-back-top.ht-hide{
 	bottom: -100px;
+}
+
+#svg-filters {
+	display: none;
 }
 
 /*--------------------------------------------------------------
