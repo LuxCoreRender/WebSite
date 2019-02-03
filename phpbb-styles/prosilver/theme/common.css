@@ -886,7 +886,8 @@ fieldset.fields1 dl.pmlist dd.recipients {
 /* Pagination in viewforum for multipage topics */
 .row .pagination {
 	display: block;
-	margin-top: -12px;
+	margin-top: 3px;
+	margin-bottom: 3px;
 }
 
 .row .pagination > ul {
@@ -980,8 +981,15 @@ fieldset.fields1 dl.pmlist dd.recipients {
 /* Miscellaneous styles
 ---------------------------------------- */
 .copyright {
-	padding: 5px;
+	font-size: 10px;
 	text-align: center;
+	padding: 10px;
+}
+
+.footer-row {
+	font-size: 10px;
+	line-height: 1.8;
+	margin: 0;
 }
 
 .small {
@@ -1264,6 +1272,10 @@ ul.linklist:after,
 
 .dropdown-page-jump input.tiny {
 	width: 50px;
+}
+
+.dropdown .clone.hidden  {
+	display: none;
 }
 
 .dropdown .clone.hidden + li.separator {
