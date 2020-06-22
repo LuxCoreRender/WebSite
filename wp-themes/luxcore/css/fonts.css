@@ -11,20 +11,18 @@
  * https://www.fontfabric.com/muller-narrow/
  */
 @font-face {
-  font-family: 'Muller Narrow';
-  src: // local('Muller Narrow'),
-       url('fonts/mullernarrow-light-webfont.woff2') format('woff2'),
-       url('fonts/mullernarrow-light-webfont.woff') format('woff'),
-       url('fonts/mullernarrow-light-webfont.ttf') format('truetype');
+  font-family: 'muller-narrow-web';
+  src: url('../fonts/mullernarrow-light-webfont.woff2') format('woff2'),
+       url('../fonts/mullernarrow-light-webfont.woff') format('woff'),
+       url('../fonts/mullernarrow-light-webfont.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Muller Narrow';
-  src: // local('Muller Narrow'),
-       url('fonts/mullernarrow-extrabold-webfont.woff2') format('woff2'),
-       url('fonts/mullernarrow-extrabold-webfont.woff') format('woff'),
-       url('fonts/mullernarrow-extrabold-webfont.ttf') format('truetype');
+  font-family: 'muller-narrow-web';
+  src: url('../fonts/mullernarrow-extrabold-webfont.woff2') format('woff2'),
+       url('../fonts/mullernarrow-extrabold-webfont.woff') format('woff'),
+       url('../fonts/mullernarrow-extrabold-webfont.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }

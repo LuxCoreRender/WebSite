@@ -263,7 +263,7 @@ h6 {
 	margin: 0;
 	font-weight: 800;
 	line-height: 1.2;
-	font-family: 'Muller Narrow', sans-serif;
+	font-family: 'muller-narrow-web', sans-serif;
 }
 
 h1{
@@ -770,7 +770,7 @@ a:active {
 	float: left;
 	width: 80px;
 	text-align: right;
-    font-family: 'Muller Narrow', sans-serif;
+    font-family: 'muller-narrow-web', sans-serif;
 }
 
 .single .ht-post-info{
@@ -1303,7 +1303,7 @@ object {
 }
 
 .ht-site-title{
-	font-family: 'Muller Narrow', sans-serif;
+	font-family: 'muller-narrow-web', sans-serif;
 	font-weight: 300;
 	margin: 0 0 8px;
 	letter-spacing: 1px;
@@ -1438,7 +1438,7 @@ object {
 	text-decoration: none;
 	color: #444;
 	font-size: 22px;
-	font-family: 'Muller Narrow', sans-serif;
+	font-family: 'muller-narrow-web', sans-serif;
 	line-height: 36px;
 	padding: 0 15px 0.1em;
 	font-weight: 300;
@@ -1626,7 +1626,7 @@ object {
 	margin-bottom: 25px;
 	padding: 0 10%;
 	line-height: 1.2;
-	font-family: 'Muller Narrow', sans-serif;
+	font-family: 'muller-narrow-web', sans-serif;
 	-webkit-animation-duration: 0.5s;
 	animation-duration: 0.5s;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2)
@@ -2304,7 +2304,7 @@ section#ht-featured-post-section{
 	line-height: 1;
 	margin-bottom: 25px;
 	letter-spacing: 3px;
-	font-family: 'Muller Narrow', sans-serif;
+	font-family: 'muller-narrow-web', sans-serif;
 	font-weight: 300;
 }
 
@@ -2547,7 +2547,7 @@ section#ht-featured-post-section{
 	color: #FFF;
 	border-radius: 1px;
 	margin: 0 4px;
-	font-family: 'Muller Narrow', sans-serif;
+	font-family: 'muller-narrow-web', sans-serif;
 }
 
 .ht-cta-buttons a.ht-cta-button1{
