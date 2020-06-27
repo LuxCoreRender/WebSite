@@ -1417,7 +1417,7 @@ object {
 .ht-main-navigation li {
 	float: left;
 	position: relative;
-	margin-left: 4px;
+	margin-left: 0.2vw;
 	z-index: 999;
 }
 
@@ -1440,7 +1440,7 @@ object {
 	font-size: 1.2em;
 	font-family: 'muller-narrow-web', sans-serif;
 	line-height: 36px;
-	padding: 0 15px 0.1em;
+	padding: 0 1vw 0.1em;
 	font-weight: 300;
     transition: background-color 0.3s, color 0.3s;
 }
