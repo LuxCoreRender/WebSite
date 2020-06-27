@@ -574,6 +574,12 @@ a:active {
 	background: #fe890a;
 	margin-bottom: 1em;
 }
+#download-button-in-text:hover {
+	background: #ee7d03;
+}
+#download-button-in-text:active {
+	background: #ce5700;
+}
 #download-button-in-text h3 {
 	position: relative;
 	color: white;
