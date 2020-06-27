@@ -72,8 +72,8 @@ get_template_part( 'template-parts/section', 'slider' );
 			</div>
 		</section>
 		<section id="section-download">
-			<div class="ht-section-tagline">Download the binaries for various operating systems or get the source code of LuxCoreRender.</div>
 			<a id="download-button-in-text" class="link-button" href="/download/"><h3>Download</h3></a>
+			<div class="ht-section-tagline">Download the binaries for various operating systems or get the source code of LuxCoreRender.</div>
 		</section>
 	</div>
 </section>
