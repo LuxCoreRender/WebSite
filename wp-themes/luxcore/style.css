@@ -2676,7 +2676,9 @@ section#ht-featured-post-section{
 }
 
 #svg-filters {
-	display: none;
+	position: absolute;
+	height: 0;
+	width: 0;
 }
 
 /*--------------------------------------------------------------
