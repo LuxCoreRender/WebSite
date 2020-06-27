@@ -1820,6 +1820,7 @@ section#ht-featured-post-section{
 }
 
 .ht-featured-pseudolink {
+	display: inline-block;
 	position: relative;
 	padding-bottom: 0.2em;
 	color: #fe890a; 
@@ -1837,7 +1838,11 @@ section#ht-featured-post-section{
 }
 
 .ht-featured-post:hover .ht-featured-pseudolink::after {
-	background-position: 200%;
+	background-position: 1em;
+}
+
+.ht-featured-post:hover .ht-featured-pseudolink::before  {
+	transform: translateY( -0.3em );
 }
 
 /*--------------------------------------------------------------
