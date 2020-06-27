@@ -1800,6 +1800,8 @@ section#ht-featured-post-section{
 
 .ht-featured-excerpt{
 	padding: 0 30px;
+	line-height: 1.6em;
+	min-height: 4.8em;
 }
 
 .ht-featured-pseudolink {
