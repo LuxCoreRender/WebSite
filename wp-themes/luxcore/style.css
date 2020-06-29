@@ -573,6 +573,7 @@ a:active {
 	display: inline-block;
 	background: #fe890a;
 	margin-bottom: 1em;
+	border-radius: 0.4vw;
 }
 #download-button-in-text:hover {
 	background: #ee7d03;
@@ -1385,9 +1386,6 @@ object {
 	width: 85%;
 }
 
-#section-download{
-}
-
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -1426,6 +1424,7 @@ object {
 	margin-top: -2px;
 	position: relative;
 	margin-left: 10px;
+	border-radius: 0.3vw;
 }
 
 .ht-main-navigation li.menu-item.download:hover a {
@@ -1479,6 +1478,8 @@ object {
 	background: #FFF;
 	min-width: 200px;
 	padding: 8px;
+	padding-left: 0;
+	border-radius: 0 0 0.4vw 0.4vw;
 }
 
 .ht-main-navigation ul ul::before {
@@ -1518,7 +1519,7 @@ object {
 	font-weight: 400;
 	color: #444;
 	line-height: 1.5;
-	padding: 10px 15px;
+	padding: 10px 15px 10px 23px;
 	font-size: 18px;
 }
 
@@ -1558,10 +1559,10 @@ object {
 .ht-main-navigation ul ul li:hover > a::before {
 	content: '';
 	position: absolute;
-	top: 11px;
+	top: 0.7em;
 	left: 0;
-	bottom: 9px;
-	border-left: 3px solid #fe890a;
+	bottom: 0.6em;
+	border-left: 0.3em solid #fe890a;
 }
 
 .site-main .comment-navigation,
@@ -1635,6 +1636,7 @@ object {
 	padding: 0.3em 0.7em 0.4em;
 	background: rgba( 0, 0, 0, 0.55 );
 	border-left: 0.2em solid #fe890a;
+	border-radius: 0.4vw;
 }
 
 .ht-slide-cap-desc{
@@ -1649,6 +1651,7 @@ object {
 	animation-delay: 1s;
 	background: rgba( 0, 0, 0, 0.55 );
 	padding: 0.8em 1.3em;
+	border-radius: 0.4vw;
 }
 
 #ht-home-slider-section .owl-carousel .owl-nav .owl-prev, 
@@ -1656,11 +1659,16 @@ object {
 	position: absolute;
 	top: 50%;
 	text-indent: -9999px;
-	height: 112px;
-    width: 69px;
-	margin-top: -35px;
-	opacity: 0.8;
+	height: 7vw;
+	width: 5vw;
+	transform: translateY(-50%);
+	opacity: 0;
 	transition: opacity 0.3s, background-position 0.1s;
+	border-radius: 0.4vw;
+}
+
+#ht-home-slider-section:hover .owl-carousel .owl-nav div{
+	opacity: 0.8;
 }
 
 #ht-home-slider-section .owl-carousel .owl-nav > div:hover{
@@ -1670,19 +1678,31 @@ object {
 #ht-home-slider-section .owl-carousel .owl-nav .owl-prev{
 	background: url(images/prev.svg) no-repeat center rgba(0,0,0,0.6);
 	left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
 }
 
 #ht-home-slider-section .owl-carousel .owl-nav .owl-prev:hover{
 	background-position: 40%;
 }
 
+#ht-home-slider-section .owl-carousel .owl-nav .owl-prev:active{
+	background-position: 35%;
+}
+
 #ht-home-slider-section .owl-carousel .owl-nav .owl-next{
 	background: url(images/next.svg) no-repeat center rgba(0,0,0,0.6);
 	right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 #ht-home-slider-section .owl-carousel .owl-nav .owl-next:hover{
 	background-position: 60%;
+}
+
+#ht-home-slider-section .owl-carousel .owl-nav .owl-next:active{
+	background-position: 65%;
 }
 
 #ht-home-slider-section .owl-item.active .ht-slide-cap-title,
@@ -1789,6 +1809,7 @@ section#ht-featured-post-section{
 	text-align: center;
 	padding-bottom: 60px;
 	background: white;
+	border-radius: 0.4vw;
 	transition: background-color 0.2s, box-shadow 0.2s;
 	box-shadow: 0.05em 0.2em 0.2em rgba( 0, 0, 0, 0.1 ), 0.05em 0.4em 0.9em rgba( 0, 0, 0, 0.03 )
 }
@@ -1807,7 +1828,7 @@ section#ht-featured-post-section{
 .ht-featured-excerpt{
 	padding: 0 30px;
 	line-height: 1.6em;
-	min-height: 4.8em;
+	min-height: 5em;
 }
 
 .ht-featured-pseudolink {
@@ -3360,6 +3381,9 @@ section#ht-featured-post-section{
 		width: 48%;
 		margin-bottom: 30px;
 	}
+	#ht-home-slider-section .owl-carousel .owl-nav div {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 768px){
@@ -3392,6 +3416,7 @@ section#ht-featured-post-section{
 
 	.ht-featured-post{
 		float: none;
+		display: block;
 		margin: 0 auto 80px;
 		width: 75%;
 	}
@@ -3444,6 +3469,10 @@ section#ht-featured-post-section{
 
 	.ht-blog-post img{
 		width: 100%;
+	}
+
+	#section-download{
+		text-align: center;
 	}
 
 	#ht-cta-section{
