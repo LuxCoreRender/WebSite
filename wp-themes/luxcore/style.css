@@ -3275,12 +3275,13 @@ section#ht-featured-post-section{
 	.toggle-bar{
 		display: block;
 		position: absolute;
-		top: 22px;
-		right: 20px;
+		top: 2.3em;
+		right: 1.5em;
 		height: 50px;
 		width: 50px;
 		background: #fe890a;
 		cursor: pointer;
+		border-radius: 3px;
 	}
 
 	.toggle-bar span{
