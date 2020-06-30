@@ -81,14 +81,27 @@ function total_setup() {
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
 
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	add_editor_style( array( 'css/editor-style.css', total_fonts_url() ) );
 }
 endif; // total_setup
 add_action( 'after_setup_theme', 'total_setup' );
+
+/**
+ * Make the title a CSS class.
+ *
+ * @wp-hook nav_menu_css_class
+ * @param   array $classes
+ * @param   object $item
+ * @return  array
+ */
+function wpse_65375_class_by_title( $classes, $item )
+{
+    $new_class = mb_strtolower( $item->title );
+    $new_class = str_replace( ' ', '-', $new_class );
+    $new_class = sanitize_html_class( $new_class );
+    $classes[] = $new_class;
+    return $classes;
+}
+add_filter( 'nav_menu_css_class', 'wpse_65375_class_by_title', 10, 2 );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -109,6 +122,15 @@ function total_add_excerpt_support_for_pages() {
 	add_post_type_support( 'page', 'excerpt' );
 }
 add_action( 'init', 'total_add_excerpt_support_for_pages' );
+
+/**
+ * Get the first sentence of the string (used as an alternative to get_the_excerpt())
+ */
+function get_first_sentence( $string ) {
+	$sentence = preg_split( '/(\.|!|\?)\s/', $string, 2, PREG_SPLIT_DELIM_CAPTURE );
+	// $sentence['1'] is the punctuation mark
+	return $sentence['0'] . $sentence['1'];
+}
 
 /**
  * Register widget area.
@@ -188,67 +210,11 @@ function total_widgets_init() {
 }
 add_action( 'widgets_init', 'total_widgets_init' );
 
-if ( ! function_exists( 'total_fonts_url' ) ) :
-/**
- * Register Google fonts for Total.
- *
- * @since Total 1.0
- *
- * @return string Google fonts URL for the theme.
- */
-function total_fonts_url() {
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,latin-ext';
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Open Sans, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Pontano Sans font: on or off', 'total' ) ) {
-		$fonts[] = 'Pontano+Sans';
-	}
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Inconsolata, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Oswald font: on or off', 'total' ) ) {
-		$fonts[] = 'Oswald:400,700,300';
-	}
-
-	/*
-	 * Translators: To add an additional character subset specific to your language,
-	 * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-	 */
-	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'total' );
-
-	if ( 'cyrillic' == $subset ) {
-		$subsets .= ',cyrillic,cyrillic-ext';
-	} elseif ( 'greek' == $subset ) {
-		$subsets .= ',greek,greek-ext';
-	} elseif ( 'devanagari' == $subset ) {
-		$subsets .= ',devanagari';
-	} elseif ( 'vietnamese' == $subset ) {
-		$subsets .= ',vietnamese';
-	}
-
-	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' =>  implode( '|', $fonts ) ,
-			'subset' =>  $subsets ,
-		), '//fonts.googleapis.com/css' );
-	}
-
-	return $fonts_url;
-}
-endif;
-
 /**
  * Enqueue scripts and styles.
  */
 function total_scripts() {
-    wp_enqueue_script( 'smoothscroll', get_template_directory_uri() . '/js/SmoothScroll.js', array(), '1.00', false );
+    //~ wp_enqueue_script( 'smoothscroll', get_template_directory_uri() . '/js/SmoothScroll.js', array(), '1.00', false );
     wp_enqueue_script( 'jquery-nav', get_template_directory_uri() . '/js/jquery.nav.js', array('jquery'), '1.00', true );
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '1.00', true );
 	wp_enqueue_script( 'isotope-pkgd', get_template_directory_uri() . '/js/isotope.pkgd.js', array('jquery', 'imagesloaded' ), '1.00', true );
@@ -262,13 +228,13 @@ function total_scripts() {
 	wp_localize_script( 'total-custom', 'total_localize', array('template_path' => get_template_directory_uri() )); 
 	
 	wp_enqueue_style( 'total-style', get_stylesheet_uri(), array( 'animate', 'font-awesome', 'owl-carousel', 'nivo-lightbox', 'superfish'), '1.0' );
-	wp_enqueue_style( 'total-fonts', total_fonts_url(), array(), null );
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '1.0' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), '4.4.0' );
+	wp_enqueue_style( 'fonts', get_template_directory_uri() . '/css/fonts.css', array(), '1.0' );
 	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), '1.3.3' );
 	wp_enqueue_style( 'nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css', array(), '1.3.3' );
 	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', array(), '1.3.3' );
-	wp_add_inline_style( 'total-style', total_dymanic_styles() );
+	//~ wp_add_inline_style( 'total-style', total_dymanic_styles() );
 	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

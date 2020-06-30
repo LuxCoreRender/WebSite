@@ -101,20 +101,6 @@ msgstr ""
 msgid "Footer Four"
 msgstr ""
 
-#. Translators: If there are characters in your language that are not supported
-#. by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: ../functions.php:193
-msgctxt "Pontano Sans font: on or off"
-msgid "on"
-msgstr ""
-
-#. Translators: If there are characters in your language that are not supported
-#. by Inconsolata, translate this to 'off'. Do not translate into your own language.
-#: ../functions.php:201
-msgctxt "Oswald font: on or off"
-msgid "on"
-msgstr ""
-
 #. Translators: To add an additional character subset specific to your language,
 #. translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
 #: ../functions.php:209

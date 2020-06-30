@@ -66,9 +66,12 @@ jQuery(function($){
   $('.ht-portfolio-image').nivoLightbox();
   
   $('.ht-menu > ul').superfish({
-      delay:       500,                            // one second delay on mouseout
-      animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation
-      speed:       'fast',                          // faster animation speed
+      delay:       400,                                 // 0.4 seconds delay on mouseout
+      //~ animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation
+      animation:    {height: 'show'},                   // slide-down animation
+      animationOut: {height: "hide", marginTop: "hide", marginBottom: "hide", paddingTop: "hide", paddingBottom: "hide"},
+      speed:       '10',                                // faster animation speed
+      speedOut:    '10'
   });
     
   $('.ht-service-excerpt h5').click(function(){

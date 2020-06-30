@@ -51,7 +51,9 @@
 		<div id="ht-bottom-footer">
 			<div class="ht-container">
 				<div class="ht-site-info">
-					Site design Copyright © 2018 LuxCoreRender project, images used are copyrighted by their respective authors and used with kind permission. Contact <a href="mailto:admin@luxcorerender.org">admin@luxcorerender.org</a>
+					<div>Site design Copyright © 2018 LuxCoreRender project</div>
+					<div>Images used are copyrighted by their respective authors and used with kind permission.</div>
+					<div>Contact <a href="mailto:admin@luxcorerender.org">admin@luxcorerender.org</a></div>
 				</div><!-- #site-info -->
 			</div>
 		</div>
@@ -60,6 +62,12 @@
 
 <div id="ht-back-top" class="ht-hide"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
 <?php wp_footer(); ?>
+
+<svg xmlns="http://www.w3.org/2000/svg" id="svg-filters">
+	<filter id="svg-colorize-orange">
+		<feColorMatrix color-interpolation-filters="sRGB" type="matrix" values="0 0 0 0 0.996 0 0 0 0 0.537 0 0 0 0 0.039 0 0 0 1 0"/>
+	</filter>
+</svg>
 
 </body>
 </html>

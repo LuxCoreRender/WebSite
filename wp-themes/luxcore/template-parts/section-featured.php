@@ -59,7 +59,9 @@ if(get_theme_mod('total_featured_section_disable') != 'on' ){ ?>
 						/*if(has_excerpt()){
 							echo get_the_excerpt();
 						}else{*/
-							echo total_excerpt(get_the_content(), 130); 
+							$first_sentence = get_first_sentence( get_the_content() );
+							// trim the sentence if it's still longer than 130 characters
+							echo total_excerpt( $first_sentence, 130 ); 
 						/*}*/?>
 						</div>
 						<div class="ht-featured-link">
